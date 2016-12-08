@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,17 +74,24 @@ public class QRCode
 	public static void processFile(String inputDir, String outputDir, String csvFileName, int fileNameColumnNumber, String logoPath, int width, int height, String fileImageFormat)
 	{
 		String line = "";
-		String cvsSplitBy = ",";
+		String csvSplitBy = ",";
+	
+		
 		StringBuffer dataBuff = new StringBuffer("");
+		String processFile = inputDir + "/" + csvFileName;
+		String newFileWithData = inputDir+"/"+csvFileName+".temp";
 
-		try (BufferedReader br = new BufferedReader(new FileReader(inputDir + "/" + csvFileName)))
+
+		try (BufferedReader br = new BufferedReader(new FileReader(processFile)))
 		{
+
+			PrintWriter writer = new PrintWriter(newFileWithData);
 
 			while ((line = br.readLine()) != null)
 			{
 				String saveDir = outputDir + "/";
 				// use comma as separator
-				String[] entry = line.split(cvsSplitBy);
+				String[] entry = line.split(csvSplitBy);
 				// clearing previous buffer
 
 				dataBuff.setLength(0);
@@ -105,9 +113,14 @@ public class QRCode
 					}
 				}
 				System.out.println("Going to generate QR for data " + dataBuff.toString());
+				writer.println(line + csvSplitBy + dataBuff.toString());
 				generateQR(dataBuff.toString(), logoPath, saveDir, fileImageFormat, width, height);
 
 			}
+			writer.close();
+			File oldFile = new File(processFile);
+			File newFile = new File(newFileWithData);
+			newFile.renameTo(oldFile);
 
 		}
 		catch (IOException e)
