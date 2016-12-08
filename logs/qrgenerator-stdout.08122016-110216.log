@@ -1,0 +1,17 @@
+./config/qrgeneration.properties
+Going to process file input[/home/suraj/Desktop/gitrepo/qrcode_generator/input], output[/home/suraj/Desktop/gitrepo/qrcode_generator/output], processfile[data.csv],columnNumber[9],logoPath[/home/suraj/Desktop/gitrepo/qrcode_generator/input/udio_24_white_500.png],WIDTH[1000],HEIGHT1000],finalFormat[png]
+9
+Going to generate QR for data 08476136171MIRCTC Southern Railway24412137Chennai42ID5335676MAS004
+File created for data at /home/suraj/Desktop/gitrepo/qrcode_generator/output/southern.png
+9
+Going to generate QR for data 08476136171LIRCTC Western Railway24412137Gujarat42ID5335676AMD005
+File created for data at /home/suraj/Desktop/gitrepo/qrcode_generator/output/western.png
+9
+Going to generate QR for data 08476136171MIRCTC Northern Railway24412135Delhi42ID5335677NDLS001
+File created for data at /home/suraj/Desktop/gitrepo/qrcode_generator/output/northern.png
+9
+Going to generate QR for data 08476136171LIRCTC Eastern Railway24412137Kolkata42ID5335677KOAA002
+File created for data at /home/suraj/Desktop/gitrepo/qrcode_generator/output/eastern.png
+9
+Going to generate QR for data 08476136171LIRCTC Central Railway24412136Mumbai42ID5335677CSTM003
+File created for data at /home/suraj/Desktop/gitrepo/qrcode_generator/output/central.png
